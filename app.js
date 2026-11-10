@@ -136,5 +136,23 @@ sections.forEach((section) => {
 // AUTOMATIC FOOTER YEAR
 document.getElementById("year").textContent = new Date().getFullYear();
 
+// PROFILE PHOTO SCAN REVEAL
+const photoCard = document.getElementById("photoCard");
+const photoScanStatus = document.getElementById("photoScanStatus");
+
+if (photoCard && photoScanStatus) {
+    const finishPhotoScan = () => {
+        photoCard.classList.remove("is-scanning");
+        photoCard.classList.add("is-scanned");
+        photoScanStatus.textContent = "SCAN COMPLETE";
+    };
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        finishPhotoScan();
+    } else {
+        window.setTimeout(finishPhotoScan, 3200);
+    }
+}
+
 // INITIALIZE ICONS
 lucide.createIcons();

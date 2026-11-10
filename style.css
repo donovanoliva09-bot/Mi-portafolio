@@ -507,19 +507,106 @@ button {
     height: 100%;
     object-fit: cover;
     display: block;
-    filter: saturate(0.85);
+    filter: blur(14px) saturate(0.45) brightness(0.72);
+    transform: scale(1.08);
+    transition: filter 1.25s cubic-bezier(0.2, 0.75, 0.25, 1), transform 1.4s ease;
+}
+
+.photo-card.is-scanned .photo-frame img {
+    filter: blur(0) saturate(1) brightness(1);
+    transform: scale(1);
 }
 
 .photo-scan {
     position: absolute;
     left: 0;
     width: 100%;
+    height: 42%;
+    top: -42%;
+    background: linear-gradient(180deg, transparent, rgba(25, 181, 254, 0.08) 75%, rgba(117, 217, 255, 0.8));
+    border-bottom: 2px solid var(--blue-light);
+    box-shadow: 0 8px 24px rgba(25, 181, 254, 0.3);
+    opacity: 0;
+    animation: scan 3.2s cubic-bezier(0.45, 0, 0.25, 1) 1 forwards;
+    pointer-events: none;
+}
+
+.scan-target {
+    position: absolute;
+    inset: 15%;
+    opacity: 0;
+    background:
+        linear-gradient(var(--blue-light), var(--blue-light)) left top / 18px 2px no-repeat,
+        linear-gradient(var(--blue-light), var(--blue-light)) left top / 2px 18px no-repeat,
+        linear-gradient(var(--blue-light), var(--blue-light)) right top / 18px 2px no-repeat,
+        linear-gradient(var(--blue-light), var(--blue-light)) right top / 2px 18px no-repeat,
+        linear-gradient(var(--blue-light), var(--blue-light)) left bottom / 18px 2px no-repeat,
+        linear-gradient(var(--blue-light), var(--blue-light)) left bottom / 2px 18px no-repeat,
+        linear-gradient(var(--blue-light), var(--blue-light)) right bottom / 18px 2px no-repeat,
+        linear-gradient(var(--blue-light), var(--blue-light)) right bottom / 2px 18px no-repeat;
+    transition: opacity 0.6s ease;
+    pointer-events: none;
+}
+
+.photo-card.is-scanning .scan-target {
+    opacity: 0.8;
+    animation: target-pulse 1.4s ease-in-out infinite alternate;
+}
+
+.photo-card.is-scanning {
+    animation: card-scan-glow 1.6s ease-in-out infinite alternate;
+}
+
+.scan-progress {
     height: 2px;
-    top: 0;
-    background: var(--blue-light);
-    box-shadow: 0 0 15px var(--blue);
-    opacity: 0.7;
-    animation: scan 4s linear infinite;
+    margin-top: 8px;
+    overflow: hidden;
+    background: rgba(117, 217, 255, 0.12);
+    border-radius: 4px;
+}
+
+.scan-progress span {
+    display: block;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, var(--blue), var(--green));
+    box-shadow: 0 0 10px var(--blue);
+}
+
+.photo-card.is-scanning .scan-progress span {
+    animation: scan-progress 3.2s ease-out forwards;
+}
+
+.photo-card.is-scanned .scan-progress span {
+    width: 100%;
+}
+
+.photo-card.is-scanning .photo-info {
+    opacity: 0;
+    transform: translateY(16px);
+}
+
+.photo-info {
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.photo-card.is-scanned .photo-scan {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.photo-card.is-scanned .scan-target {
+    opacity: 0;
+}
+
+.online-indicator {
+    color: var(--green);
+    text-shadow: 0 0 9px rgba(85, 230, 165, 0.45);
+}
+
+.photo-card.is-scanning .online-indicator {
+    color: var(--blue-light);
+    animation: blink 0.8s ease-in-out infinite alternate;
 }
 
 .photo-info {
@@ -1045,8 +1132,24 @@ button {
 }
 
 @keyframes scan {
-    0% { top: 0; }
-    100% { top: 100%; }
+    0% { top: -42%; opacity: 0; }
+    12% { opacity: 1; }
+    82% { opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+}
+
+@keyframes scan-progress {
+    to { width: 100%; }
+}
+
+@keyframes target-pulse {
+    from { filter: drop-shadow(0 0 2px var(--blue)); }
+    to { filter: drop-shadow(0 0 8px var(--blue-light)); }
+}
+
+@keyframes card-scan-glow {
+    from { box-shadow: 0 0 22px rgba(25, 181, 254, 0.12); }
+    to { box-shadow: 0 0 42px rgba(25, 181, 254, 0.32); }
 }
 
 /* RESPONSIVE */

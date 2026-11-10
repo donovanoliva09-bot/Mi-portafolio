@@ -119,20 +119,22 @@
                 <div class="orbit orbit-one"></div>
                 <div class="orbit orbit-two"></div>
 
-                <div class="photo-card">
+                <div class="photo-card is-scanning" id="photoCard">
                     <div class="photo-top">
                         <span>IDENTITY PROFILE</span>
-                        <span class="online-indicator">● ONLINE</span>
+                        <span class="online-indicator" id="photoScanStatus" aria-live="polite">SCANNING...</span>
                     </div>
 
                     <div class="photo-frame">
                         <img src="images/, generada por IA.png" alt="My personal portrait">
                         <div class="photo-scan"></div>
+                        <div class="scan-target" aria-hidden="true"></div>
                     </div>
+                    <div class="scan-progress" aria-hidden="true"><span></span></div>
 
-                    <div class="photo-info">
+                    <div class="photo-info" id="photoInfo">
                         <div>
-                            <span class="small-label">DEVELOPER ID</span>
+                            <span class="small-label">IDENTITY VERIFIED</span>
                             <h3>Donovan Oliva</h3>
                             <p>Future Systems Engineer</p>
                         </div>
