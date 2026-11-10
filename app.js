@@ -6,6 +6,9 @@ const navItems = document.querySelectorAll(".nav-link");
 
 menuToggle.addEventListener("click", () => {
     navLinks.classList.toggle("open");
+    const isOpen = navLinks.classList.contains("open");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
 
     const icon = menuToggle.querySelector("i");
 
@@ -22,6 +25,8 @@ menuToggle.addEventListener("click", () => {
 navItems.forEach((link) => {
     link.addEventListener("click", () => {
         navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation");
 
         const icon = menuToggle.querySelector("i");
         icon.setAttribute("data-lucide", "menu");
