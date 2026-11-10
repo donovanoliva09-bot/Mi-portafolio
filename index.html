@@ -1,0 +1,446 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal portfolio of a future Systems Engineer and web developer.">
+    <title>My Portfolio | Future Developer</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <div class="page-loader" id="pageLoader" role="status" aria-live="polite" aria-label="Loading portfolio">
+        <div class="loader-content">
+            <div class="loader-mark" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <p class="loader-brand">DEV<span>DRAFT</span></p>
+            <p class="loader-message">Preparing your experience</p>
+            <div class="loader-track" aria-hidden="true"><span></span></div>
+        </div>
+    </div>
+    <script>
+        (() => {
+            const loader = document.getElementById("pageLoader");
+            let hidden = false;
+            const hideLoader = () => {
+                if (hidden || !loader) return;
+                hidden = true;
+                loader.classList.add("is-hidden");
+            };
+
+            window.addEventListener("load", () => setTimeout(hideLoader, 450), { once: true });
+            setTimeout(hideLoader, 4000);
+        })();
+    </script>
+
+    <div class="background-grid"></div>
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+
+    <header class="header">
+        <nav class="navbar">
+            <a href="#home" class="logo">
+                <span class="logo-icon">✦</span> DEV<span>DRAFT</span>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">
+                <i data-lucide="menu"></i>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <a href="#contact" class="nav-button">Let's Talk <span>↗</span></a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero section" id="home">
+            <div class="hero-content reveal">
+                <div class="status-label">
+                    <span class="status-dot"></span>
+                    SYSTEM ONLINE · AVAILABLE TO LEARN
+                </div>
+
+                <p class="eyebrow">WELCOME TO MY DIGITAL WORLD</p>
+
+                <h1>
+                    Hello, I'm <span class="gradient-text">Donovan Oliva</span>
+                    <br>
+                    <span class="outline-text">Future Developer</span>
+                </h1>
+
+                <p class="hero-description">
+                    I'm passionate about technology, programming, and creating
+                    digital experiences. Currently building my skills to become
+                    a Systems Engineer.
+                </p>
+
+                <div class="typing-line">
+                    <span>Currently exploring:</span>
+                    <strong id="typingText">Web Development</strong>
+                    <span class="cursor">|</span>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="#projects" class="primary-button">
+                        Explore Projects <span>↗</span>
+                    </a>
+                    <a href="#about" class="secondary-button">
+                        Discover More
+                    </a>
+                </div>
+
+                <div class="hero-socials">
+                    <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <i data-lucide="github"></i>
+                    </a>
+                    <span class="social-divider"></span>
+                    <span class="social-caption">CONNECT WITH ME</span>
+                </div>
+            </div>
+
+            <div class="hero-visual reveal">
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+
+                <div class="photo-card">
+                    <div class="photo-top">
+                        <span>IDENTITY PROFILE</span>
+                        <span class="online-indicator">● ONLINE</span>
+                    </div>
+
+                    <div class="photo-frame">
+                        <img src="images/, generada por IA.png" alt="My personal portrait">
+                        <div class="photo-scan"></div>
+                    </div>
+
+                    <div class="photo-info">
+                        <div>
+                            <span class="small-label">DEVELOPER ID</span>
+                            <h3>Donovan Oliva</h3>
+                            <p>Future Systems Engineer</p>
+                        </div>
+                        <div class="profile-symbol">✦</div>
+                    </div>
+                </div>
+
+                <div class="floating-chip chip-one">
+                    <i data-lucide="code-2"></i>
+                    <span>CODING</span>
+                </div>
+
+                <div class="floating-chip chip-two">
+                    <i data-lucide="cpu"></i>
+                    <span>INNOVATION</span>
+                </div>
+
+                <div class="visual-label">EGGHEAD TECHNOLOGY // 001</div>
+            </div>
+
+            <a href="#about" class="scroll-indicator">
+                <span></span> SCROLL TO EXPLORE
+            </a>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="section about-section" id="about">
+            <div class="section-heading reveal">
+                <h2>About <span class="gradient-text">Me</span></h2>
+                <p>Get to know the person behind the screen.</p>
+            </div>
+
+            <div class="about-layout">
+                <div class="about-text glass-panel reveal">
+                    <div class="panel-header">
+                        <span class="panel-dot"></span>
+                        PERSONAL_INFORMATION.exe
+                    </div>
+
+                    <h3>Curiosity is my greatest tool.</h3>
+
+                    <p>
+                        Hello! I'm a student interested in technology and
+                        programming. I enjoy learning how websites work and
+                        creating projects that solve problems.
+                    </p>
+
+                    <p>
+                        I'm currently improving my knowledge of web development,
+                        computer science, and English. My goal is to study
+                        Systems Engineering and become a skilled professional.
+                    </p>
+
+                    <p>
+                        I believe that every project is an opportunity to learn,
+                        experiment, and improve.
+                    </p>
+
+                    <a href="#contact" class="text-link">Let's connect <span>↗</span></a>
+                </div>
+
+                <div class="about-stats reveal">
+                    <div class="stat-card glass-panel">
+                        <span class="stat-icon"><i data-lucide="code"></i></span>
+                        <strong>01+</strong>
+                        <span>Projects created</span>
+                    </div>
+
+                    <div class="stat-card glass-panel">
+                        <span class="stat-icon"><i data-lucide="book-open"></i></span>
+                        <strong>∞</strong>
+                        <span>Things to learn</span>
+                    </div>
+
+                    <div class="stat-card glass-panel">
+                        <span class="stat-icon"><i data-lucide="target"></i></span>
+                        <strong>100%</strong>
+                        <span>Motivation to grow</span>
+                    </div>
+
+                    <div class="stat-card glass-panel">
+                        <span class="stat-icon"><i data-lucide="rocket"></i></span>
+                        <strong>2027+</strong>
+                        <span>Future goals</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section class="section projects-section" id="projects">
+            <div class="section-heading reveal">
+                <h2>Featured <span class="gradient-text">Projects</span></h2>
+                <p>A collection of ideas, experiments, and creations.</p>
+            </div>
+
+            <div class="projects-grid">
+                <article class="project-card glass-panel reveal">
+                    <div class="project-visual project-visual-one">
+                        <div class="project-code">
+                            <span>01</span>
+                            <i data-lucide="code-2"></i>
+                        </div>
+                        <img class="project-logo" src="images/logo2.png" alt="Logo de DevBoost">
+                        <span class="project-status">COMPLETED EXPERIMENT</span>
+                    </div>
+
+                    <div class="project-content">
+                        <span class="project-category">WEB DEVELOPMENT</span>
+                        <h3>DevBoost</h3>
+                        <p>
+                            A platform designed to help young developers gain practical experience,
+                            develop their programming skills, and build a professional portfolio by
+                            completing projects that showcase their abilities.
+                        </p>
+                        <div class="tech-tags">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP</span>
+                        </div>
+                        <a href="https://devboost.infinityfreeapp.com/" class="project-link">View Project <span>↗</span></a>
+                    </div>
+                </article>
+
+                <article class="project-card glass-panel reveal">
+                    <div class="project-visual project-visual-two">
+                        <div class="project-code">
+                            <span>02</span>
+                            <i data-lucide="layout"></i>
+                        </div>
+                        <img class="project-logo" src="images/VoxVision.png" alt="Logo de VoxVision">
+                        <span class="project-status">COMPLETED EXPERIMENT</span>
+                    </div>
+
+                    <div class="project-content">
+                        <span class="project-category">WEB DEVELOPMENT</span>
+                        <h3>VoxVision</h3>
+                        <p>
+                            An assistive technology platform designed to empower people with visual impairments
+                            by analyzing their surroundings in real time through a camera and providing voice
+                            guidance to identify objects and avoid obstacles, promoting greater safety and independence.
+                        </p>
+                        <div class="tech-tags">
+                            <span>HTML</span><span>CSS</span><span>Responsive</span>
+                        </div>
+                        <a href="https://fredy-8.github.io/VoxVision/" class="project-link">View Project <span>↗</span></a>
+                    </div>
+                </article>
+
+                <article class="project-card glass-panel reveal">
+                    <div class="project-visual project-visual-three">
+                        <div class="project-code">
+                            <span>03</span>
+                            <i data-lucide="flask-conical"></i>
+                        </div>
+                        <div class="project-graphic">+</div>
+                        <span class="project-status">IN DEVELOPMENT</span>
+                    </div>
+
+                    <div class="project-content">
+                        <span class="project-category">NEW EXPERIMENT</span>
+                        <h3>Future Project</h3>
+                        <p>
+                            New ideas are always under development. This space
+                            is reserved for my next creation.
+                        </p>
+                        <div class="tech-tags">
+                            <span>Learning</span><span>Innovation</span>
+                        </div>
+                        <a href="#contact" class="project-link">Stay Tuned <span>↗</span></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="section skills-section" id="skills">
+            <div class="section-heading reveal">
+                <h2>My <span class="gradient-text">Skills</span></h2>
+                <p>Tools and abilities I'm developing every day.</p>
+            </div>
+
+            <div class="skills-layout">
+                <div class="skills-panel glass-panel reveal">
+                    <div class="panel-header">
+                        <span class="panel-dot"></span>
+                        TECHNICAL_SKILLS.dat
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-info"><span>HTML</span><span>Learning</span></div>
+                        <div class="skill-track"><div class="skill-progress" data-progress="85"></div></div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-info"><span>CSS</span><span>Learning</span></div>
+                        <div class="skill-track"><div class="skill-progress" data-progress="75"></div></div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-info"><span>JavaScript</span><span>Learning</span></div>
+                        <div class="skill-track"><div class="skill-progress" data-progress="55"></div></div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Microsoft Excel</span><span>Learning</span></div>
+                        <div class="skill-track"><div class="skill-progress" data-progress="70"></div></div>
+                    </div>
+                </div>
+
+                <div class="soft-skills reveal">
+                    <div class="soft-skill-card glass-panel">
+                        <i data-lucide="users"></i>
+                        <span>Teamwork</span>
+                    </div>
+                    <div class="soft-skill-card glass-panel">
+                        <i data-lucide="message-circle"></i>
+                        <span>Communication</span>
+                    </div>
+                    <div class="soft-skill-card glass-panel">
+                        <i data-lucide="brain"></i>
+                        <span>Problem Solving</span>
+                    </div>
+                    <div class="soft-skill-card glass-panel">
+                        <i data-lucide="clock"></i>
+                        <span>Time Management</span>
+                    </div>
+                    <div class="soft-skill-card glass-panel">
+                        <i data-lucide="heart-handshake"></i>
+                        <span>Responsibility</span>
+                    </div>
+                    <div class="soft-skill-card glass-panel">
+                        <i data-lucide="lightbulb"></i>
+                        <span>Creativity</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="section contact-section" id="contact">
+
+            <div class="section-heading reveal">
+                <h2>Let's <span class="gradient-text">Connect</span></h2>
+                <p>Find me on these platforms. Feel free to reach out!</p>
+            </div>
+
+            <div class="contact-platforms">
+
+                <!-- GITHUB -->
+                <a href="https://github.com/donovanoliva09-bot"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="platform-card glass-panel reveal">
+
+                    <div class="platform-icon">
+                        <img src="https://cdn.simpleicons.org/github/F5FAFF" alt="GitHub">
+                    </div>
+
+                    <h3>GitHub</h3>
+                    <span class="platform-username">@donovanoliva09-bot</span>
+                    <div class="platform-action">VIEW PROFILE <span>↗</span></div>
+                </a>
+
+                <!-- INSTAGRAM -->
+                <a href="https://www.instagram.com/alexisberciano/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="platform-card glass-panel reveal">
+
+                    <div class="platform-icon">
+                        <img src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram">
+                    </div>
+
+                    <h3>Instagram</h3>
+                    <span class="platform-username">@alexisberciano</span>
+                    <div class="platform-action">VIEW PROFILE <span>↗</span></div>
+                </a>
+
+                <!-- EMAIL: OPENS GMAIL COMPOSE -->
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=donovanoliva09%40gmail.com&su=Contact%20from%20your%20portfolio&body=Hello%20Donovan%2C%0A%0A"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="platform-card glass-panel reveal">
+
+                    <div class="platform-icon">
+                        <img src="https://cdn.simpleicons.org/gmail/EA4335" alt="Gmail">
+                    </div>
+
+                    <h3>Email</h3>
+                    <span class="platform-username">donovanoliva09@gmail.com</span>
+                    <div class="platform-action">SEND MESSAGE <span>↗</span></div>
+                </a>
+
+            </div>
+
+            <div class="contact-footer reveal">
+                <span class="contact-status-dot"></span>
+                AVAILABLE FOR NEW CONNECTIONS
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="footer">
+        <a href="#home" class="logo">✦ Dev<span>DRAFT</span></a>
+        <p>Designed and developed with curiosity and passion.</p>
+        <span>© <span id="year"></span> Donovan Alexis Oliva Berciano. All rights reserved.</span>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
